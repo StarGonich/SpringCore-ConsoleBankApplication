@@ -1,7 +1,6 @@
 package org.example.model;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 public class Account {
     private final Long id;

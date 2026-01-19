@@ -2,14 +2,14 @@ package org.example.service;
 
 import org.example.model.Account;
 import org.example.model.User;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-@Service
+@Component
 public class OperationsConsoleListener {
     private final UserService userService;
     private final AccountService accountService;

@@ -6,7 +6,6 @@ import java.util.List;
 public class User {
     private final Long id;
     private String login;
-    // Что лучше: List или HashMap
     private List<Account> accountList = new ArrayList<>();
 
     public User(Long id, String login) {
