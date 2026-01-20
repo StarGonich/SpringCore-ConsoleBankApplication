@@ -38,7 +38,7 @@ public class AccountService {
         return account;
     }
 
-    public int accountClose(Long accountId) {
+    public void accountClose(Long accountId) {
         Account account = accountsById.get(accountId);
         Long userId = account.getUserId();
         List<Account> accounts = new ArrayList<>();
@@ -46,7 +46,7 @@ public class AccountService {
             if (acc.getUserId().equals(userId)) accounts.add(acc);
         }
         if (accounts.size() == 1) {
-            return -1;
+            throw new IllegalArgumentException("Нельзя закрыть единственный счёт пользователя");
         }
         accountsById.remove(accountId);
         userService.getUsersById().get(account.getUserId()).getAccountList().remove(account);
@@ -54,7 +54,6 @@ public class AccountService {
         BigDecimal money = account.getAmount();
         Account firstAccount = accounts.getFirst();
         firstAccount.setAmount(firstAccount.getAmount().add(money));
-        return 0;
     }
 
     public void accountDeposit(Long accountId, BigDecimal money) {

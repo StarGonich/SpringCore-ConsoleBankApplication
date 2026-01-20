@@ -18,8 +18,7 @@ public class UserService {
 
     public User createUser(String login) {
         if (usersByLogin.contains(login)) {
-            System.out.printf("Пользователь с логином %s уже существует.%n", login);
-            return null;
+            throw new IllegalArgumentException("Пользователь с таким логином уже существует.");
         }
         Long userId = ++counter;
         User user = new User(userId, login);
