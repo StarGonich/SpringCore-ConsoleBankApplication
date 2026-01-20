@@ -16,7 +16,7 @@ import java.util.Map;
 @Service
 @PropertySource("classpath:application.properties")
 public class AccountService {
-    private Map<Long, Account> accountsById = new HashMap<>();
+    private final Map<Long, Account> accountsById = new HashMap<>();
     private long counter = 0L;
     private final BigDecimal defaultAmount;
     private final BigDecimal transferCommission;

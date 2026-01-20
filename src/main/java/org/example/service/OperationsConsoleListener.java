@@ -1,12 +1,9 @@
 package org.example.service;
 
-import org.example.model.Account;
-import org.example.model.User;
 import org.example.operations.Operation;
 import org.example.operations.OperationType;
 import org.springframework.stereotype.Component;
 
-import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;

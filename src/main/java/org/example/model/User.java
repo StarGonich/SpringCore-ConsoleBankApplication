@@ -5,8 +5,8 @@ import java.util.List;
 
 public class User {
     private final Long id;
-    private String login;
-    private List<Account> accountList = new ArrayList<>();
+    private final String login;
+    private final List<Account> accountList = new ArrayList<>();
 
     public User(Long id, String login) {
         this.id = id;
@@ -22,19 +22,9 @@ public class User {
                 '}';
     }
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
 
     public List<Account> getAccountList() {
         return accountList;
     }
 
-    public void setAccountList(List<Account> accountList) {
-        this.accountList = accountList;
-    }
 }
