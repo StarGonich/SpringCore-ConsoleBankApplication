@@ -1,5 +1,6 @@
 package org.example.operations;
 
+import org.example.aop.RequiredArgsCount;
 import org.example.service.AccountService;
 import org.springframework.stereotype.Component;
 
@@ -14,10 +15,9 @@ public class AccountTransferOperation implements Operation {
     }
 
     @Override
+    @RequiredArgsCount(requiredCount = 3,
+            errorMessage = "Использование: ACCOUNT_TRANSFER [ID счёта откуда] [ID счёта куда] [Сумма]")
     public void execute(String[] args) {
-        if (args.length != 3) {
-            throw new IllegalArgumentException("Использование: ACCOUNT_DEPOSIT [ID счёта откуда] [ID счёта куда] [Сумма]");
-        }
         Long accountId1 = Long.parseLong(args[0]);
         Long accountId2 = Long.parseLong(args[1]);
         BigDecimal money = new BigDecimal(args[2]);
